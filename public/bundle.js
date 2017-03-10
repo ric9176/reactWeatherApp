@@ -64,11 +64,11 @@
 
 	var _Weather2 = _interopRequireDefault(_Weather);
 
-	var _About = __webpack_require__(219);
+	var _About = __webpack_require__(221);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Example = __webpack_require__(220);
+	var _Example = __webpack_require__(222);
 
 	var _Example2 = _interopRequireDefault(_Example);
 
@@ -24887,11 +24887,6 @@
 	      'div',
 	      null,
 	      _react2.default.createElement(_Nav2.default, null),
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        'Main component'
-	      ),
 	      this.props.children
 	    );
 	  }
@@ -24924,23 +24919,18 @@
 	      'div',
 	      null,
 	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        'Navbar'
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/' },
+	        _reactRouter.IndexLink,
+	        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	        'Get Weather'
 	      ),
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/about' },
+	        { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	        'About'
 	      ),
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/example' },
+	        { to: '/example', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	        'Example'
 	      )
 	    );
@@ -24963,15 +24953,24 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _WeatherText = __webpack_require__(219);
+
+	var _WeatherText2 = _interopRequireDefault(_WeatherText);
+
+	var _WeatherForm = __webpack_require__(220);
+
+	var _WeatherForm2 = _interopRequireDefault(_WeatherForm);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Weather = _react2.default.createClass({
 	  displayName: 'Weather',
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h3',
+	      'div',
 	      null,
-	      'Weather Component'
+	      _react2.default.createElement(_WeatherText2.default, null),
+	      _react2.default.createElement(_WeatherForm2.default, null)
 	    );
 	  }
 	});
@@ -24980,6 +24979,81 @@
 
 /***/ },
 /* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherText = _react2.default.createClass({
+	  displayName: 'WeatherText',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'h3',
+	      null,
+	      'Get Weather'
+	    );
+	  }
+	});
+
+	exports.default = WeatherText;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherForm = _react2.default.createClass({
+	  displayName: "WeatherForm",
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "div",
+	      null,
+	      _react2.default.createElement(
+	        "form",
+	        { onSubmit: this.onFormSubmit },
+	        _react2.default.createElement(
+	          "div",
+	          null,
+	          _react2.default.createElement("input", { type: "text", ref: "name", placeholder: "Enter City Name" })
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          null,
+	          _react2.default.createElement(
+	            "button",
+	            null,
+	            "Get Weather"
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = WeatherForm;
+
+/***/ },
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25008,7 +25082,7 @@
 	exports.default = About;
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

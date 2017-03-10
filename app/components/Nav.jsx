@@ -1,14 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, IndexLink} from 'react-router';
 
 const Nav = React.createClass({
   render() {
     return (
       <div>
-      <h2>Navbar</h2>
-      <Link to="/">Get Weather</Link>
-      <Link to="/about">About</Link>
-      <Link to="/example">Example</Link>
+      <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
+      <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
+      <Link to="/example" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Example</Link>
       </div>
     );
   }
