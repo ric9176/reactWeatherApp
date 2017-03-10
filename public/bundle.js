@@ -68,6 +68,10 @@
 
 	var _About2 = _interopRequireDefault(_About);
 
+	var _Example = __webpack_require__(220);
+
+	var _Example2 = _interopRequireDefault(_Example);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
@@ -77,6 +81,7 @@
 	    _reactRouter.Route,
 	    { path: '/', component: _Main2.default },
 	    _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _About2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'example', component: _Example2.default }),
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Weather2.default })
 	  )
 	), document.getElementById('app'));
@@ -24927,6 +24932,16 @@
 	        _reactRouter.Link,
 	        { to: '/' },
 	        'Get Weather'
+	      ),
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/about' },
+	        'About'
+	      ),
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/example' },
+	        'Example'
 	      )
 	    );
 	  }
@@ -24991,6 +25006,35 @@
 	});
 
 	exports.default = About;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Example = _react2.default.createClass({
+	  displayName: 'Example',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'h3',
+	      null,
+	      'Example Component'
+	    );
+	  }
+	});
+
+	exports.default = Example;
 
 /***/ }
 /******/ ]);
