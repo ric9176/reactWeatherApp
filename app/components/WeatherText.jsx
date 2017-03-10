@@ -2,8 +2,11 @@ import React from 'react';
 
 const WeatherText = React.createClass({
   render() {
+    let location = this.props.location;
+    let temp = this.props.temp;
+
     return (
-      <h3>Get Weather</h3>
+      <h3>{location} {temp}</h3>
     );
   }
 });

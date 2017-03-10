@@ -24965,12 +24965,34 @@
 
 	var Weather = _react2.default.createClass({
 	  displayName: 'Weather',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      location: 'Miami',
+	      temp: 88
+	    };
+	  },
+	  handleSearch: function handleSearch(location) {
+	    this.setState({
+	      location: location,
+	      temp: 23
+	    });
+	  },
 	  render: function render() {
+	    var _state = this.state,
+	        temp = _state.temp,
+	        location = _state.location;
+
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(_WeatherText2.default, null),
-	      _react2.default.createElement(_WeatherForm2.default, null)
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Find weather'
+	      ),
+	      _react2.default.createElement(_WeatherForm2.default, { onSearch: this.handleSearch }),
+	      _react2.default.createElement(_WeatherText2.default, { location: location, temp: state })
 	    );
 	  }
 	});
@@ -24996,10 +25018,15 @@
 	var WeatherText = _react2.default.createClass({
 	  displayName: 'WeatherText',
 	  render: function render() {
+	    var location = this.props.location;
+	    var temp = this.props.temp;
+
 	    return _react2.default.createElement(
 	      'h3',
 	      null,
-	      'Get Weather'
+	      location,
+	      ' ',
+	      temp
 	    );
 	  }
 	});
@@ -25010,7 +25037,7 @@
 /* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -25023,26 +25050,37 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var WeatherForm = _react2.default.createClass({
-	  displayName: "WeatherForm",
+	  displayName: 'WeatherForm',
+
+	  onFormSubmit: function onFormSubmit(e) {
+	    e.preventDefault();
+
+	    var location = this.refs.location.value;
+
+	    if (location.length > 0) {
+	      this.refs.location.value = '';
+	      this.props.onSearch(location);
+	    }
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "div",
+	      'div',
 	      null,
 	      _react2.default.createElement(
-	        "form",
+	        'form',
 	        { onSubmit: this.onFormSubmit },
 	        _react2.default.createElement(
-	          "div",
+	          'div',
 	          null,
-	          _react2.default.createElement("input", { type: "text", ref: "name", placeholder: "Enter City Name" })
+	          _react2.default.createElement('input', { type: 'text', ref: 'location', placeholder: 'Enter City Name' })
 	        ),
 	        _react2.default.createElement(
-	          "div",
+	          'div',
 	          null,
 	          _react2.default.createElement(
-	            "button",
+	            'button',
 	            null,
-	            "Get Weather"
+	            'Get Weather'
 	          )
 	        )
 	      )
