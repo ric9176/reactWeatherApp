@@ -6,7 +6,7 @@ const WeatherText = React.createClass({
     let temp = this.props.temp;
 
     return (
-      <h3>{location} {temp}</h3>
+      <h3>The weather in {location} is {temp} degrees</h3>
     );
   }
 });
