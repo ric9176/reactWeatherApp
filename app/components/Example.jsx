@@ -12,7 +12,6 @@ const Example = () => {
         </li>
         <li>
           <Link to='/?location=Cascais'>Cascais, Portugal</Link>
-
         </li>
       </ol>
     </div>

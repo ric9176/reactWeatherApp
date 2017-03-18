@@ -1,8 +1,18 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const About = () => {
   return (
-    <h3>About Component</h3>
+    <div>
+    <h1 className="text-center">About</h1>
+    <p>
+      This is a simple web app built with react and foundation that hits the
+      Open Weather Api and displays the temperature of the location to the user.
+    </p>
+    <p>
+    The repo can be found <a href="https://github.com/ric9176/reactWeatherApp">here</a>
+    </p>
+    </div>
   );
 };
 
