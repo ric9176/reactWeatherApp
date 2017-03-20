@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 const About = () => {
   return (
     <div>
-    <h1 className="text-center">About</h1>
+    <h1 className="text-center page-title">About</h1>
     <p>
       This is a simple web app built with react and foundation that hits the
       Open Weather Api and displays the temperature of the location to the user.
