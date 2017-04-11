@@ -2,16 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 
-const ErrorModal = React.createClass({
-  getDefaultProps () {
-    return {
-      title: 'Error'
-    };
-  },
-  propTypes: {
-    title: React.PropTypes.string,
-    message: React.PropTypes.string.isRequired
-  },
+class ErrorModal extends React.Component {
+  constructor () {
+    super()
+  }
+
   componentDidMount () {
     let {title, message} = this.props;
     let modalMarkup = (
@@ -31,13 +26,23 @@ const ErrorModal = React.createClass({
 
     let modal = new Foundation.Reveal($('#error-modal'));
     modal.open();
-  },
+  }
+
   render () {
     return (
       <div>
       </div>
     );
   }
-});
+}
+
+ErrorModal.propTypes: {
+  title: React.PropTypes.string,
+  message: React.PropTypes.string.isRequired
+},
+
+ErrorModal.defaultProps = {
+  title: 'Error'
+}
 
 export default ErrorModal;
