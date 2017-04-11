@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const Example = () => {
-  return (
+const Example = () => (
     <div>
       <h1 className="text-center page-title">Examples</h1>
       <p>Here are a few examples locations to try out:</p>
@@ -16,6 +15,5 @@ const Example = () => {
       </ol>
     </div>
   );
-};
 
 export default Example;

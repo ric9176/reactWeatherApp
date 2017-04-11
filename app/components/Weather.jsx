@@ -55,21 +55,21 @@ class Weather extends React.Component{
   render() {
     var {isLoading, temp, location, errorMessage} = this.state;
 
-    function renderMessage () {
+     const renderMessage = () => {
       if (isLoading) {
         return <h3 className="text-center">Fetaching weather...</h3>;
       } else if (temp && location) {
         return <WeatherText location={location} temp={temp}/>;
       }
-    }
+    };
 
-    function renderError () {
+     const renderError = () => {
       if (typeof errorMessage === 'string') {
         return (
           <ErrorModal message={errorMessage} />
         );
       }
-    }
+    };
     return (
       <div>
         <h1 className="text-center page-title">Get weather</h1>
