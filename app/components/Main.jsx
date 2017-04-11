@@ -1,8 +1,7 @@
 import React from 'react';
 import Nav from 'Nav';
 
-const Main = (props) => {
-  return (
+const Main = (props) => (
     <div>
       <Nav/>
       <div className="row">
@@ -12,6 +11,5 @@ const Main = (props) => {
       </div>
     </div>
   );
-};
 
 export default Main;

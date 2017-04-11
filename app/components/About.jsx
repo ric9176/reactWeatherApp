@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const About = () => {
-  return (
+const About = () => (
     <div>
     <h1 className="text-center page-title">About</h1>
     <p>
@@ -14,6 +13,5 @@ const About = () => {
     </p>
     </div>
   );
-};
 
 export default About;

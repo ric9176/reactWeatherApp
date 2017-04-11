@@ -4,7 +4,7 @@ import WeatherForm from 'WeatherForm';
 import openWeatherMap from 'openWeatherMap';
 import ErrorModal from 'ErrorModal';
 
-class Weather extends React.Component{
+class Weather extends React.Component {
   constructor() {
     super();
     this.state = {
