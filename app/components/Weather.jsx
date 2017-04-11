@@ -4,15 +4,17 @@ import WeatherForm from 'WeatherForm';
 import openWeatherMap from 'openWeatherMap';
 import ErrorModal from 'ErrorModal';
 
-const Weather = React.createClass({
-  getInitialState: function () {
-    return {
-      isLoading: false
+class Weather extends React.Component{
+  constructor() {
+    super();
+    this.state = {
+      isLoading:false
     };
-  },
-  handleSearch: function (location) {
-    var that = this;
+    this.handleSearch = this.handleSearch.bind(this);
+  }
 
+ handleSearch (location) {
+   var that = this;
     this.setState({
       isLoading: true,
       errorMessage: undefined,
@@ -33,7 +35,7 @@ const Weather = React.createClass({
       });
     });
 
-  },
+  }
   componentDidMount () {
     let location = this.props.location.query.location;
 
@@ -41,7 +43,7 @@ const Weather = React.createClass({
       this.handleSearch(location);
       window.location.hash = '#/';
     }
-  },
+  }
   componentWillReceiveProps (newProps) {
     let location = newProps.location.query.location;
 
@@ -49,7 +51,7 @@ const Weather = React.createClass({
       this.handleSearch(location);
       window.location.hash = '#/';
     }
-  },
+  }
   render() {
     var {isLoading, temp, location, errorMessage} = this.state;
 
@@ -77,6 +79,6 @@ const Weather = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Weather;
