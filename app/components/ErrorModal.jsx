@@ -36,13 +36,13 @@ class ErrorModal extends React.Component {
   }
 }
 
-ErrorModal.propTypes: {
+export default ErrorModal;
+
+ErrorModal.propTypes = {
   title: React.PropTypes.string,
   message: React.PropTypes.string.isRequired
 },
 
 ErrorModal.defaultProps = {
   title: 'Error'
-}
-
-export default ErrorModal;
+};
