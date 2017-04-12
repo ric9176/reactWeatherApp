@@ -1,3 +1,9 @@
 # reactWeatherApp
 
-This is a Toy project in react using the open-weather api: see is live here["http://reacting-to-weather.herokuapp.com/"]
+This is a toy project in react using the open-weather api: see is live here: http://reacting-to-weather.herokuapp.com/
+
+To run locally open your terminal and run: 
+
+- npm install
+- webpack
+- npm start
